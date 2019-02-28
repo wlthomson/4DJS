@@ -5,12 +5,13 @@
   "author": "Will Thomson <will.tho@outlook.com>",
   "license": "MIT",
   "scripts": {
-	  "build": "yarn clean && babel js --out-dir Resources --presets=@babel/env",
+    "build": "yarn clean && babel js --out-dir Resources",
     "clean": "rm -rf Resources"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.3.4",
+    "@babel/plugin-transform-modules-commonjs": "^7.2.0",
     "@babel/preset-env": "^7.3.4"
   }
 }
