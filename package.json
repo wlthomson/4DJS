@@ -1,0 +1,10 @@
+{
+  "name": "4DJS",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Will Thomson <will.tho@outlook.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "rm -rf Resources && mkdir Resources && cp js/*.js Resources/"
+  }
+}
