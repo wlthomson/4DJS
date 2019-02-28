@@ -1,0 +1,11 @@
+# Mac
+.DS_STORE
+
+# 4D
+*.4dd
+*.Match
+*.Journal
+Resources/
+
+# Yarn
+yarn-error.log
