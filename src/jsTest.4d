@@ -6,15 +6,15 @@ $iContext:=JS New Context ({$tContextName})
 
 C_TEXT($tScriptDir;$tScriptFile;$tScriptPath)
 $tScriptDir:=Get 4D folder(Current resources folder)
-$tScriptFile:="main.js"
+$tScriptFile:="entry.js"
 $tScriptPath:=$tScriptDir+$tScriptFile
 
-C_TEXT($tResult)
+C_TEXT($tStdOut)
 
 C_TEXT($tFunction)
-$tFunction:="helloFunction";
+$tFunction:="helloWorld"
 
 JS Run Script File ($iContext;$tScriptPath)
-JS Call Function ($iContext;$tFunction)
-$tResult:=JS Get Stdout ($iContext)
-JS Delete Context ($tJsContextName)
+JS Call Function ($iContext;"main";"\""+$tFunction+"\"")
+$tStdOut:=JS Get Stdout ($iContext)
+JS Delete Context ($tContextName)
