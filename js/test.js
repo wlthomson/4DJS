@@ -1,3 +1,3 @@
 import "@babel/polyfill";
 
-export { helloWorld, helloAwait } from "./functions";
+export { helloWorld, helloAwait, helloGet } from "./functions";

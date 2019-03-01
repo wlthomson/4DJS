@@ -9,12 +9,19 @@ $tScriptDir:=Get 4D folder(Current resources folder)
 $tScriptFile:="entry.js"
 $tScriptPath:=$tScriptDir+$tScriptFile
 
-C_TEXT($tStdOut)
-
-C_TEXT($tFunction)
-$tFunction:="helloWorld"
+C_TEXT($tMain;$tFunction)
+$tMain:="main"
+$tHelloWorld:="helloWorld"
+$tHelloAwait:="helloAwait"
+$tHelloGet:="helloGet"
 
 JS Run Script File ($iContext;$tScriptPath)
-JS Call Function ($iContext;"main";"\""+$tFunction+"\"")
+
+JS Call Function ($iContext;$tMain;"\""+$tHelloWorld+"\"")
+JS Call Function ($iContext;$tMain;"\""+$tHelloAwait+"\"")
+JS Call Function ($iContext;$tMain;"\""+$tHelloGet+"\"")
+
+C_TEXT($tStdOut)
 $tStdOut:=JS Get Stdout ($iContext)
+
 JS Delete Context ($tContextName)
